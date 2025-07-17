@@ -1,8 +1,6 @@
 import streamlit as st
 import requests
 import json
-import locale
-
 
 def get_prediction(payload):
     endpoint = st.secrets["API-ENDPOINT"]
@@ -23,7 +21,7 @@ def get_prediction(payload):
         """
 
         predicted_score_formatted = result["prediction"]
-        
+
         if predicted_score_formatted == 0:
             st.warning("**Ruim (Poor)**", icon="👎")
         elif predicted_score_formatted == 1:
