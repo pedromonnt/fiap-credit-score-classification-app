@@ -15,9 +15,9 @@ def get_prediction(payload):
         result = response.json()
 
         """
-        ### Predição de Credit Score
+        ### Predição de Score de Crédito
 
-        De acordo com os dados fornecidos, seu Credit Score será...
+        De acordo com os dados fornecidos, seu Score de Crédito será...
         """
 
         predicted_score_formatted = result["prediction"]
@@ -36,7 +36,13 @@ def get_prediction(payload):
 
 # --- Interface do Streamlit ---
 
-st.set_page_config(layout="wide", page_title="Predição de Credit Score")
+st.set_page_config(layout="wide", page_title="Predição de Score de Crédito")
+
+st.title("Trabalho Final - FIAP - 10DTSR - MLOPS")
+st.markdown("Ana Cristina Lourenço Maria: RM359310")
+st.markdown("Jayana da Silva Alves: RM359631")
+st.markdown("Pedro Silva de Sá Monnerat: RM359532")
+st.markdown("---")
 
 st.title("Predição de Score de Crédito")
 st.markdown("Este modelo prevê a classificação do score de crédito de um cliente com base em suas características financeiras e históricas.")
@@ -99,7 +105,7 @@ with col7:
     num_credit_inquiries = st.number_input("Número de Consultas de Crédito Recentes", min_value=0, step=1)
 
 # Botão para enviar os dados para predição
-if st.button("Estimar Credit Score", type="primary", use_container_width=True):
+if st.button("Estimar Score de Crédito", type="primary", use_container_width=True):
     # Cria o payload com base nos dados do formulário
     payload = {"data": {
         "Age": str(age),
